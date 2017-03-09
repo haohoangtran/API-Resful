@@ -44,6 +44,6 @@ class TaskUpdateRes(Resource):
         name = body["name"]
         local_id = body["local_id"]
         done=body["done"]
-        new_task=Task(name=name,local_id=local_id,done=done)
         task.update(name=name,local_id=local_id,done=done)
-        return mlab.item2json(task)
+        task_update=Task.objects().with_id(task_id)
+        return mlab.item2json(task_update)
