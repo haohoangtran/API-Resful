@@ -12,6 +12,7 @@ api = Api(app)
 
 api.add_resource(TaskListRes, "/tasks")
 api.add_resource(TaskRes, "/tasks/<task_id>")
+api.add_resource(TaskDeleteRes,"/tasks/<task_id>")
 
 if __name__ == '__main__':
     app.run()
